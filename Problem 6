@@ -1,0 +1,19 @@
+// Glow LED 4,5 delay – 2,3, delay – 6,7, delay – 0,1, delay
+void  setup(){
+  volatile char *dir;
+  dir=0x30;
+  *dir=0xFF;
+}
+void loop(){
+  volatile char *out;
+  volatile long i;
+  out=0x31;
+  *out=0x30;
+  for(i=0;i<200000;i++);
+  *out=0x0C;
+  for(i=0;i<200000;i++);
+   *out=0xC0;
+  for(i=0;i<200000;i++);
+  *out=0x03;
+  for(i=0;i<200000;i++);
+}
