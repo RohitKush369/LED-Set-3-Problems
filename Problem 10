@@ -1,0 +1,44 @@
+// Glow LED 7 then 7,6 then 7,6,5... then 7,6,5,4,3,2,1,0  with delay.
+void  setup() {
+  volatile char *dir;
+  dir = 0x30;
+  *dir = 0xFF;
+}
+void loop() {
+  volatile char *out;
+  volatile long i;
+  out = 0x31;
+  *out = 0x80;
+  for (i = 0; i < 500000; i++);
+  *out = 0x00;
+  for (i = 0; i < 500000; i++);
+  *out = 0xC0;
+  for (i = 0; i < 500000; i++);
+  *out = 0x00;
+  for (i = 0; i < 500000; i++);
+  *out = 0xE0;
+  for (i = 0; i < 500000; i++);
+  *out = 0x00;
+  for (i = 0; i < 500000; i++);
+  *out = 0xF0;
+  for (i = 0; i < 500000; i++);
+  *out = 0x00;
+  for (i = 0; i < 500000; i++);
+  *out = 0xF8;
+  for (i = 0; i < 500000; i++);
+  *out = 0x00;
+  for (i = 0; i < 500000; i++);
+  *out = 0xFC;
+  for (i = 0; i < 500000; i++);
+  *out = 0x00;
+  for (i = 0; i < 500000; i++);
+  *out = 0xFE;
+  for (i = 0; i < 500000; i++);
+  *out = 0x00;
+  for (i = 0; i < 500000; i++);
+  *out = 0xFF;
+  for (i = 0; i < 500000; i++);
+  *out = 0x00;
+  for (i = 0; i < 500000; i++);
+
+}
